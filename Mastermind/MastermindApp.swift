@@ -11,7 +11,8 @@ import SwiftUI
 struct MastermindApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let game = MastermindGame()
+            ContentView(viewModel: game)
         }
     }
 }

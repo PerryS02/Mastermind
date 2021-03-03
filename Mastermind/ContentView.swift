@@ -15,18 +15,32 @@ import SwiftUI
 //The guiding principle here is to have a GeometryReader for the view of the entire screen, and nowhere else,
 //which allows each view to be thought of in terms of the amount of space it takes up in the entire screen.
 struct ContentView: View {
+    
+    @ObservedObject var viewModel: MastermindGame
+    
     var body: some View {
         GeometryReader(content: { geometry in
             HStack() {
                 VStack() {
                     CodeView().frame(maxHeight: geometry.size.height * 0.1)
                     AllRowsView()
-                    SelectPegsView().frame(maxHeight: geometry.size.height * 0.1)
+                    ZStack() {
+                        RoundedRectangle(cornerRadius: 10).fill(Color.white)
+                        RoundedRectangle(cornerRadius: 10).stroke(lineWidth: 3)
+                        HStack() {
+                            RedSelectView().onTapGesture{viewModel.fillSlot(pegID: 1)}
+                            OrangeSelectView().onTapGesture{viewModel.fillSlot(pegID: 2)}
+                            YellowSelectView().onTapGesture{viewModel.fillSlot(pegID: 3)}
+                            GreenSelectView().onTapGesture{viewModel.fillSlot(pegID: 4)}
+                            BlueSelectView().onTapGesture{viewModel.fillSlot(pegID: 5)}
+                            PurpleSelectView().onTapGesture{viewModel.fillSlot(pegID: 6)}
+                        }.padding(5)
+                    }.frame(maxHeight: geometry.size.height * 0.1)
                 }
                 VStack() {
-                    NewGameView().frame(minHeight: geometry.size.height * 0.1)
+                    NewGameView().frame(minHeight: geometry.size.height * 0.1).onTapGesture{viewModel.newGame()}
                     AllFeedbacksView()
-                    DeleteView().frame(minHeight: geometry.size.height * 0.1)
+                    DeleteView().frame(minHeight: geometry.size.height * 0.1).onTapGesture{viewModel.delete()}
                 }.frame(maxWidth: geometry.size.width * 0.13)
             }.padding()
             .foregroundColor(Color.init(.sRGB, red: 0.3, green: 0.3, blue: 0.3, opacity: 1.0))
@@ -141,6 +155,13 @@ struct ActiveRowView: View {
                 }
             }
         })
+    }
+}
+
+struct slotView: View {
+    //var slot: MastermindGame<PegColor>.Slot
+    var body: some View {
+        Circle().stroke(lineWidth: 2)
     }
 }
 
@@ -349,6 +370,6 @@ struct DeleteView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: MastermindGame())
     }
 }

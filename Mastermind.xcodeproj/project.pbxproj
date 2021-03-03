@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C24E81BC25E2DB57007D2C96 /* MastermindViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24E81BB25E2DB57007D2C96 /* MastermindViewModel.swift */; };
+		C24E81BF25E4001B007D2C96 /* Array+identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24E81BE25E4001B007D2C96 /* Array+identifiable.swift */; };
 		C29B0C4725D89B9E00628E89 /* MastermindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29B0C4625D89B9E00628E89 /* MastermindApp.swift */; };
 		C29B0C4925D89B9E00628E89 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29B0C4825D89B9E00628E89 /* ContentView.swift */; };
 		C29B0C4B25D89BA200628E89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C29B0C4A25D89BA200628E89 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C24E81BB25E2DB57007D2C96 /* MastermindViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastermindViewModel.swift; sourceTree = "<group>"; };
+		C24E81BE25E4001B007D2C96 /* Array+identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+identifiable.swift"; sourceTree = "<group>"; };
 		C29B0C4325D89B9E00628E89 /* Mastermind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mastermind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C29B0C4625D89B9E00628E89 /* MastermindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MastermindApp.swift; sourceTree = "<group>"; };
 		C29B0C4825D89B9E00628E89 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +61,8 @@
 				C29B0C4625D89B9E00628E89 /* MastermindApp.swift */,
 				C29B0C4825D89B9E00628E89 /* ContentView.swift */,
 				C2AE6C7625DD9CC3002C5487 /* MastermindModel.swift */,
+				C24E81BE25E4001B007D2C96 /* Array+identifiable.swift */,
+				C24E81BB25E2DB57007D2C96 /* MastermindViewModel.swift */,
 				C29B0C4A25D89BA200628E89 /* Assets.xcassets */,
 				C29B0C4F25D89BA200628E89 /* Info.plist */,
 				C29B0C4C25D89BA200628E89 /* Preview Content */,
@@ -141,7 +147,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C24E81BC25E2DB57007D2C96 /* MastermindViewModel.swift in Sources */,
 				C29B0C4925D89B9E00628E89 /* ContentView.swift in Sources */,
+				C24E81BF25E4001B007D2C96 /* Array+identifiable.swift in Sources */,
 				C2AE6C7725DD9CC3002C5487 /* MastermindModel.swift in Sources */,
 				C29B0C4725D89B9E00628E89 /* MastermindApp.swift in Sources */,
 			);
